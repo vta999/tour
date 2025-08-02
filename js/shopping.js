@@ -1,21 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('submit-btn');
     const resultDiv = document.getElementById('result');
 
     const correctAnswers = {
         q1: 'A',
         q2: 'false',
-        q3: 'Merlion Statue',
+        q3: 'Merlion Statue', // 鱼尾狮雕像 → Merlion Statue
         q4: 'C',
         q5: 'true',
-        q6: 'Sim Lim Square',
+        q6: 'Sim Lim Square', // 森林广场 → Sim Lim Square
         q7: 'C',
         q8: 'true',
-        q9: 'VivoCity',
+        q9: 'VivoCity', // 怡丰城 → VivoCity
         q10: 'C'
     };
 
-    submitBtn.addEventListener('click', function() {
+    submitBtn.addEventListener('click', function () {
         let score = 0;
         const totalQuestions = 10;
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (i === 3 || i === 6 || i === 9) {
                 const answer = document.getElementById('a' + i).value.trim();
-                const isCorrect = answer === correctAnswers[questionId];
+                const isCorrect = answer.toLowerCase() === correctAnswers[questionId].toLowerCase();
 
                 if (isCorrect) {
                     score++;
