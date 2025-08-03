@@ -100,11 +100,6 @@
                   >Singapore Tourism Board</a
                 ></span
               >
-              <span
-                ><a href="https://www.nationalgeoaraphic.com/travel/"
-                  >National Geographic Travel</a
-                ></span
-              >
             </div>
           </div>
         </div>
@@ -186,334 +181,51 @@
         <div class="index_title">Visitor Survey</div>
         <div class="container">
           <form id="surveyForm">
-            <!-- Personal Information Section -->
             <div class="form-section">
-              <h2>Personal Information</h2>
-
               <div class="form-group">
                 <label for="name" class="required">Name</label>
-                <input type="text" id="name" name="name" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  oninvalid="this.setCustomValidity('Please enter your name')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <div class="error-message" id="name-error">
+                  Please enter your name
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="email" class="required">Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-
-              <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" min="12" max="99" />
-              </div>
-
-              <div class="form-group">
-                <label for="country" class="required">Country/Region</label>
-                <select id="country" name="country" required>
-                  <option value="">Please select</option>
-                  <option value="china">China</option>
-                  <option value="malaysia">Malaysia</option>
-                  <option value="india">India</option>
-                  <option value="indonesia">Indonesia</option>
-                  <option value="usa">United States</option>
-                  <option value="uk">United Kingdom</option>
-                  <option value="australia">Australia</option>
-                  <option value="others">Others</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Travel Information Section -->
-            <div class="form-section">
-              <h2>Travel Information</h2>
-
-              <div class="form-group">
-                <label class="required"
-                  >Is this your first visit to Singapore?</label
-                >
-                <div class="radio-group">
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="first-time"
-                      name="visit-frequency"
-                      value="first-time"
-                      required
-                    />
-                    <label for="first-time">First time</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="second-time"
-                      name="visit-frequency"
-                      value="second-time"
-                    />
-                    <label for="second-time">Second time</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="multiple-times"
-                      name="visit-frequency"
-                      value="multiple-times"
-                    />
-                    <label for="multiple-times">Three or more times</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="travel-purpose" class="required"
-                  >What is the main purpose of your visit?</label
-                >
-                <select id="travel-purpose" name="travel-purpose" required>
-                  <option value="">Please select</option>
-                  <option value="vacation">Vacation/Tourism</option>
-                  <option value="business">Business</option>
-                  <option value="study">Study/Education</option>
-                  <option value="visit-family">Visiting Family/Friends</option>
-                  <option value="others">Others</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="companions"
-                  >Who are you traveling with? (Multiple selections
-                  allowed)</label
-                >
-                <div class="checkbox-group">
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="alone"
-                      name="companions"
-                      value="alone"
-                    />
-                    <label for="alone">Alone</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="family"
-                      name="companions"
-                      value="family"
-                    />
-                    <label for="family">Family</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="friends"
-                      name="companions"
-                      value="friends"
-                    />
-                    <label for="friends">Friends</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="colleagues"
-                      name="companions"
-                      value="colleagues"
-                    />
-                    <label for="colleagues">Colleagues</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="tour-group"
-                      name="companions"
-                      value="tour-group"
-                    />
-                    <label for="tour-group">Tour Group</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="stay-duration" class="required"
-                  >How long do you plan to stay in Singapore?</label
-                >
-                <select id="stay-duration" name="stay-duration" required>
-                  <option value="">Please select</option>
-                  <option value="1-3">1-3 days</option>
-                  <option value="4-7">4-7 days</option>
-                  <option value="8-14">8-14 days</option>
-                  <option value="15+">15 days or more</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Travel Experience Section -->
-            <div class="form-section">
-              <h2>Travel Experience</h2>
-
-              <div class="form-group">
-                <label class="required"
-                  >How would you rate your overall impression of
-                  Singapore?</label
-                >
-                <div class="rating-scale">
-                  <div class="rating-option">
-                    <input
-                      type="radio"
-                      id="impression-1"
-                      name="impression"
-                      value="1"
-                      required
-                    />
-                    <label for="impression-1">1 (Very Poor)</label>
-                  </div>
-                  <div class="rating-option">
-                    <input
-                      type="radio"
-                      id="impression-2"
-                      name="impression"
-                      value="2"
-                    />
-                    <label for="impression-2">2</label>
-                  </div>
-                  <div class="rating-option">
-                    <input
-                      type="radio"
-                      id="impression-3"
-                      name="impression"
-                      value="3"
-                    />
-                    <label for="impression-3">3</label>
-                  </div>
-                  <div class="rating-option">
-                    <input
-                      type="radio"
-                      id="impression-4"
-                      name="impression"
-                      value="4"
-                    />
-                    <label for="impression-4">4</label>
-                  </div>
-                  <div class="rating-option">
-                    <input
-                      type="radio"
-                      id="impression-5"
-                      name="impression"
-                      value="5"
-                    />
-                    <label for="impression-5">5 (Excellent)</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="visited-attractions"
-                  >Which of the following attractions have you visited?
-                  (Multiple selections allowed)</label
-                >
-                <div class="checkbox-group">
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="gardens-by-the-bay"
-                      name="visited-attractions"
-                      value="gardens-by-the-bay"
-                    />
-                    <label for="gardens-by-the-bay">Gardens by the Bay</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="marina-bay-sands"
-                      name="visited-attractions"
-                      value="marina-bay-sands"
-                    />
-                    <label for="marina-bay-sands">Marina Bay Sands</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="sentosa"
-                      name="visited-attractions"
-                      value="sentosa"
-                    />
-                    <label for="sentosa">Sentosa Island</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="universal-studios"
-                      name="visited-attractions"
-                      value="universal-studios"
-                    />
-                    <label for="universal-studios">Universal Studios</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="chinatown"
-                      name="visited-attractions"
-                      value="chinatown"
-                    />
-                    <label for="chinatown">Chinatown</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="little-india"
-                      name="visited-attractions"
-                      value="little-india"
-                    />
-                    <label for="little-india">Little India</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="zoo"
-                      name="visited-attractions"
-                      value="zoo"
-                    />
-                    <label for="zoo">Singapore Zoo</label>
-                  </div>
-                  <div class="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id="none-attractions"
-                      name="visited-attractions"
-                      value="none"
-                    />
-                    <label for="none-attractions"
-                      >Didn't visit any attractions</label
-                    >
-                  </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  oninvalid="this.setCustomValidity('Please enter a valid email address')"
+                  oninput="this.setCustomValidity('')"
+                />
+                <div class="error-message" id="email-error">
+                  Please enter a valid email address
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="favorite-attraction"
-                  >What is your favorite attraction in Singapore?</label
+                  >Your favorite Singapore attraction</label
                 >
                 <input
                   type="text"
                   id="favorite-attraction"
                   name="favorite-attraction"
+                  placeholder="e.g. Gardens by the Bay, Sentosa Island"
                 />
               </div>
 
               <div class="form-group">
-                <label for="food-rating" class="required"
-                  >How would you rate Singapore's cuisine?</label
-                >
-                <select id="food-rating" name="food-rating" required>
-                  <option value="">Please select</option>
-                  <option value="excellent">Excellent</option>
-                  <option value="good">Good</option>
-                  <option value="average">Average</option>
-                  <option value="poor">Poor</option>
-                  <option value="very-poor">Very Poor</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="favorite-food"
-                  >What is your favorite Singaporean dish?</label
-                >
+                <label for="favorite-food">Your favorite Singapore food</label>
                 <input
                   type="text"
                   id="favorite-food"
@@ -523,124 +235,8 @@
               </div>
 
               <div class="form-group">
-                <label for="transportation-rating" class="required"
-                  >How would you rate Singapore's public transportation
-                  system?</label
-                >
-                <select
-                  id="transportation-rating"
-                  name="transportation-rating"
-                  required
-                >
-                  <option value="">Please select</option>
-                  <option value="excellent">Excellent</option>
-                  <option value="good">Good</option>
-                  <option value="average">Average</option>
-                  <option value="poor">Poor</option>
-                  <option value="very-poor">Very Poor</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="improvement"
-                  >What aspects of Singapore's tourism could be improved?</label
-                >
-                <textarea id="improvement" name="improvement"></textarea>
-              </div>
-            </div>
-
-            <!-- Future Plans Section -->
-            <div class="form-section">
-              <h2>Future Plans</h2>
-
-              <div class="form-group">
-                <label class="required"
-                  >Would you recommend Singapore to friends or family?</label
-                >
-                <div class="radio-group">
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="recommend-yes"
-                      name="recommend"
-                      value="yes"
-                      required
-                    />
-                    <label for="recommend-yes">Yes</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="recommend-maybe"
-                      name="recommend"
-                      value="maybe"
-                    />
-                    <label for="recommend-maybe">Maybe</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="recommend-no"
-                      name="recommend"
-                      value="no"
-                    />
-                    <label for="recommend-no">No</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="required"
-                  >Do you plan to visit Singapore again within the next 3
-                  years?</label
-                >
-                <div class="radio-group">
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="return-definitely"
-                      name="return"
-                      value="definitely"
-                      required
-                    />
-                    <label for="return-definitely">Definitely</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="return-probably"
-                      name="return"
-                      value="probably"
-                    />
-                    <label for="return-probably">Probably</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="return-unlikely"
-                      name="return"
-                      value="unlikely"
-                    />
-                    <label for="return-unlikely">Unlikely</label>
-                  </div>
-                  <div class="radio-option">
-                    <input
-                      type="radio"
-                      id="return-no"
-                      name="return"
-                      value="no"
-                    />
-                    <label for="return-no">No</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="next-visit"
-                  >If you plan to visit again, what would you most like to
-                  experience?</label
-                >
-                <textarea id="next-visit" name="next-visit"></textarea>
+                <label for="message">Your comments or suggestions</label>
+                <textarea id="message" name="message"></textarea>
               </div>
             </div>
 
@@ -648,15 +244,8 @@
           </form>
 
           <div class="thank-you" id="thankYou">
-            <h2>Thank You for Your Participation!</h2>
-            <p>
-              Your feedback is very important to us and will help improve
-              Singapore's tourism experience.
-            </p>
-            <p>
-              If you have any additional comments or suggestions, please contact
-              us through our customer service email.
-            </p>
+            <h2>Thank You!</h2>
+            <p>We appreciate your feedback.</p>
           </div>
         </div>
       </div>
